@@ -15,6 +15,7 @@ const AuthProvider = ({ children }) => {
           await AsyncStorage.setItem("user", JSON.stringify(fakeUser));
         },
         logout: async () => {
+          setUser(null);
           await AsyncStorage.removeItem("user");
         },
       }}
