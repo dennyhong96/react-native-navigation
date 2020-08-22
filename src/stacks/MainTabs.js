@@ -3,17 +3,9 @@ import { Text, Button } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AntDesign, Feather } from "@expo/vector-icons";
 
-import { AuthContext } from "../AuthProvider";
 import HomeStack from "./HomeStack";
 import Center from "../components/Center";
-
-const Search = () => {
-  return (
-    <Center>
-      <Text>Search</Text>
-    </Center>
-  );
-};
+import SearchStack from "./SearchStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -35,7 +27,7 @@ const MainTabs = () => {
       }}
     >
       <Tab.Screen name="Home" component={HomeStack} />
-      <Tab.Screen name="Search" component={Search} />
+      <Tab.Screen name="Search" component={SearchStack} />
     </Tab.Navigator>
   );
 };
