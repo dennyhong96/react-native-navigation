@@ -4,17 +4,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AntDesign, Feather } from "@expo/vector-icons";
 
 import { AuthContext } from "../AuthProvider";
+import HomeStack from "./HomeStack";
 import Center from "../components/Center";
-
-const Home = () => {
-  const { logout } = useContext(AuthContext);
-  return (
-    <Center>
-      <Text>Home</Text>
-      <Button title="Log me out" onPress={logout} />
-    </Center>
-  );
-};
 
 const Search = () => {
   return (
@@ -43,7 +34,7 @@ const MainTabs = () => {
         inactiveTintColor: "gray",
       }}
     >
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Home" component={HomeStack} />
       <Tab.Screen name="Search" component={Search} />
     </Tab.Navigator>
   );
